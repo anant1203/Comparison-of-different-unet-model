@@ -36,18 +36,18 @@ while [ $# -gt 0 ]; do
 done
 
 # Paths for training data, testing data, and model saving
-TRAIN_IMG_PATH="../../../numpy_arr_data/train_img_224.npy"
-TRAIN_MASK_PATH="../../../numpy_arr_data/train_mask_224.npy"
-MODEL_SAVE_PATH="../../model/unet_trained_models"
-TEST_IMG_PATH="../../../numpy_arr_data/augmented_test_images.npy"
-MASK_IMG_PATH="../../../numpy_arr_data/augmented_test_masks.npy"
+TRAIN_IMG_PATH="../numpy_arr_data/augmented_images.npy"
+TRAIN_MASK_PATH="../numpy_arr_data/augmented_masks.npy"
+MODEL_SAVE_PATH="../script/model"
+TEST_IMG_PATH="../numpy_arr_data/augmented_test_images.npy"
+MASK_IMG_PATH="../numpy_arr_data/augmented_test_masks.npy"
 TARGET_SIZE="224 224"
 THRESHOLD=0.5
 
 # Function to run training
 run_training() {
   echo "Starting model training..."
-  python train_segmentation_models.py \
+  python src/train_model/train_model.py \
     --image_path "$TRAIN_IMG_PATH" \
     --mask_path "$TRAIN_MASK_PATH" \
     --save_path "$MODEL_SAVE_PATH" \
