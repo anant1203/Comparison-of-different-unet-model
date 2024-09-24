@@ -36,8 +36,8 @@ while [ $# -gt 0 ]; do
 done
 
 # Paths for training data, testing data, and model saving
-TRAIN_IMG_PATH="../numpy_arr_data/augmented_images.npy"
-TRAIN_MASK_PATH="../numpy_arr_data/augmented_masks.npy"
+TRAIN_IMG_PATH="../numpy_arr_data/train_img_224.npy"
+TRAIN_MASK_PATH="../numpy_arr_data/train_mask_224.npy"
 MODEL_SAVE_PATH="../script/model"
 TEST_IMG_PATH="../numpy_arr_data/augmented_test_images.npy"
 MASK_IMG_PATH="../numpy_arr_data/augmented_test_masks.npy"
